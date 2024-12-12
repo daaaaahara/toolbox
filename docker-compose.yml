@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/DockerFile
+    volumes:
+      - .:/src
+      - node_modules:/src/node_modules
+      - ./docker/internal:/docker/internal
+    working_dir: "/src"
+    ports:
+      - "3000:3000"
+    command: bash /docker/internal/launch
+    tty: true
+    environment:
+      - HOST=0.0.0.0
+      - port=3000
+      - CHOKIDAR_USEPOLLING=true
+
+volumes:
+  node_modules: # node_modulesの永続化

@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "文字数カウンター",
+      "subscription": "入力したテキストの文字数をリアルタイムでカウントします。",
+      "component": "ToolsTextCounter"
+    },
+    {
+      "name": "絵文字変換",
+      "subscription": "絵文字と絵文字エイリアスを双方向に変換します。",
+      "component": "ToolsEmojiConverter"
+    },
+    {
+      "name": "命名規則変換",
+      "subscription": "入力した英数字を各種命名規則のルールに従って変換します。",
+      "component": "ToolsNamingConventionConverter"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+FROM node:23.3.0-alpine3.19
+
+# システムパッケージの更新とbashのインストール
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache bash
+
+# グローバルパッケージのインストール
+RUN npm install -g npm@latest nuxi nuxt3
+
+# 作業ディレクトリ設定
+RUN mkdir /src
+WORKDIR /src
+
+# プロジェクト固有の依存関係をインストールするための準備
+# package.jsonとpackage-lock.jsonをコピー（存在する場合）
+COPY package*.json ./
+
+# 依存関係のインストール
+RUN npm install
+
+# コンテナ起動時に実行するデフォルトコマンド
+CMD ["bash"]
