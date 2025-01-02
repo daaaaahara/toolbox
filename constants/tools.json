@@ -14,6 +14,11 @@
       "name": "命名規則変換",
       "subscription": "入力した英数字を各種命名規則のルールに従って変換します。",
       "component": "ToolsNamingConventionConverter"
+    },
+    {
+      "name": "差分チェッカー",
+      "subscription": "diffを表示します",
+      "component": "ToolsTextDiff"
     }
   ]
 }
